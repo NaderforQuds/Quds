@@ -551,4 +551,770 @@
     });
   </script>
 </body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freedom for Palestine - Gaza & Al-Quds</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* CSS Variables for Theme Colors */
+    :root {
+      --primary-color: #007a3d; /* Palestinian green */
+      --secondary-color: #ce1126; /* Palestinian red */
+      --accent-color: #000000; /* Black */
+      --light-color: #ffffff; /* White */
+      --background-overlay: rgba(0, 0, 0, 0.7);
+      --text-color: #f5f5f5;
+      --nav-bg: rgba(0, 122, 61, 0.95);
+      --footer-bg: rgba(0, 0, 0, 0.9);
+      --card-bg: rgba(255, 255, 255, 0.1);
+      --transition: all 0.3s ease;
+      --gaza-color: #e74c3c;
+      --quds-color: #f39c12;
+    }
+
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-image: url('https://images.unsplash.com/photo-1579625305637-3cde718fcd7f?ixlib=rb-4.1.0&auto=format&fit=crop&w=2070&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--background-overlay);
+      z-index: -1;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: var(--nav-bg);
+      padding: 1rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    h1 {
+      font-family: 'Roboto Slab', serif;
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      color: var(--light-color);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      max-width: 800px;
+    }
+
+    /* Navigation Styles */
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    nav a {
+      color: var(--light-color);
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 30px;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    nav a:hover {
+      background-color: var(--light-color);
+      color: var(--primary-color);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 3rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 122, 61, 0.3) 0%, rgba(206, 17, 38, 0.3) 100%);
+      z-index: -1;
+    }
+
+    .hero h2 {
+      font-family: 'Roboto Slab', serif;
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+      max-width: 800px;
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      max-width: 800px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      background-color: #e23248;
+    }
+
+    /* Region Tabs */
+    .region-tabs {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0 1rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .region-tab {
+      padding: 1rem 2rem;
+      background-color: var(--card-bg);
+      border-radius: 30px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 600;
+      border: 2px solid transparent;
+    }
+
+    .region-tab.active {
+      background-color: var(--primary-color);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .region-tab[data-region="gaza"]:hover:not(.active) {
+      border-color: var(--gaza-color);
+    }
+
+    .region-tab[data-region="quds"]:hover:not(.active) {
+      border-color: var(--quds-color);
+    }
+
+    .region-tab[data-region="general"]:hover:not(.active) {
+      border-color: var(--secondary-color);
+    }
+
+    /* Main Content Styles */
+    main {
+      flex: 1;
+      width: 90%;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .region-content {
+      display: none;
+    }
+
+    .region-content.active {
+      display: block;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      color: var(--light-color);
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      border-bottom: 2px solid var(--secondary-color);
+      padding-bottom: 0.5rem;
+      font-family: 'Roboto Slab', serif;
+    }
+
+    h2 i {
+      margin-right: 0.5rem;
+    }
+
+    p, li {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    ul {
+      list-style-position: inside;
+      padding-left: 0.5rem;
+    }
+
+    li {
+      margin-bottom: 0.8rem;
+      padding-left: 0.5rem;
+    }
+
+    blockquote {
+      font-style: italic;
+      border-left: 4px solid var(--secondary-color);
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+      font-size: 1.2rem;
+    }
+
+    /* Gaza and Quds specific styles */
+    .gaza-card {
+      border-top: 4px solid var(--gaza-color);
+    }
+
+    .quds-card {
+      border-top: 4px solid var(--quds-color);
+    }
+
+    .gaza-highlight {
+      color: var(--gaza-color);
+      font-weight: 600;
+    }
+
+    .quds-highlight {
+      color: var(--quds-color);
+      font-weight: 600;
+    }
+
+    /* Contact Section */
+    #contact {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background-color: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: var(--footer-bg);
+      color: var(--light-color);
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: auto;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      color: var(--light-color);
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      color: var(--secondary-color);
+      transform: translateY(-5px);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+    .card:nth-child(4) { animation-delay: 0.4s; }
+    .card:nth-child(5) { animation-delay: 0.5s; }
+
+    /* Responsive Design */
+    @media screen and (max-width: 992px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero h2 {
+        font-size: 2.8rem;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      header {
+        padding: 1rem;
+      }
+      
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+      
+      .hero p {
+        font-size: 1.2rem;
+      }
+      
+      nav {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+      
+      nav a {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+      
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .region-tabs {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .region-tab {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      p, li {
+        font-size: 1rem;
+      }
+      
+      .hero {
+        padding: 2rem 1rem;
+      }
+      
+      .card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <h1>Freedom for Palestine</h1>
+      <p>Standing in solidarity with the Palestinian people for justice, dignity, and liberation.</p>
+      <nav>
+        <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+        <a href="#history"><i class="fas fa-history"></i> History</a>
+        <a href="#voices"><i class="fas fa-microphone"></i> Voices</a>
+        <a href="#take-action"><i class="fas fa-hands-helping"></i> Take Action</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h2>Together We Stand for Justice</h2>
+    <p>Join the global movement supporting freedom, dignity, and human rights for the Palestinian people.</p>
+    <a href="#take-action" class="hero-btn">Take Action Now</a>
+  </div>
+
+  <div class="region-tabs">
+    <div class="region-tab active" data-region="general">All Palestine</div>
+    <div class="region-tab" data-region="gaza">Gaza Strip</div>
+    <div class="region-tab" data-region="quds">Al-Quds (Jerusalem)</div>
+  </div>
+
+  <main>
+    <!-- General Palestine Content -->
+    <div id="general-content" class="region-content active">
+      <div class="card-grid">
+        <section id="about" class="card">
+          <h2><i class="fas fa-info-circle"></i> Why We Stand</h2>
+          <p>
+            The Palestinian people have endured decades of occupation, displacement, and human rights violations.
+            This platform exists to amplify their voices, educate the world, and mobilize support for a free and just future.
+          </p>
+        </section>
+
+        <section id="history" class="card">
+          <h2><i class="fas fa-history"></i> Historical Context</h2>
+          <p>
+            From the Nakba in 1948 to the present day, Palestinians have faced systemic oppression and loss of land.
+            Understanding the roots of the conflict is essential to advocating for peace and justice.
+          </p>
+          <ul>
+            <li><strong>1948:</strong> The Nakba — over 700,000 Palestinians displaced</li>
+            <li><strong>1967:</strong> Occupation of Gaza and the West Bank begins</li>
+            <li><strong>Today:</strong> Ongoing blockade, settlement expansion, and humanitarian crisis</li>
+          </ul>
+        </section>
+
+        <section id="voices" class="card">
+          <h2><i class="fas fa-microphone"></i> Voices from Palestine</h2>
+          <blockquote>
+            "We teach life, sir." — Rafeef Ziadah, Palestinian poet and activist
+          </blockquote>
+          <p>
+            Hear stories from Palestinian artists, journalists, and families living under occupation.
+            Their resilience and creativity inspire global solidarity.
+          </p>
+        </section>
+
+        <section id="take-action" class="card">
+          <h2><i class="fas fa-hands-helping"></i> How You Can Help</h2>
+          <ul>
+            <li><i class="fas fa-share-alt"></i> Share this page and raise awareness</li>
+            <li><i class="fas fa-donate"></i> Donate to humanitarian organizations supporting Palestinians</li>
+            <li><i class="fas fa-file-signature"></i> Sign petitions and contact your representatives</li>
+            <li><i class="fas fa-paint-brush"></i> Create art, music, or writing that amplifies Palestinian voices</li>
+          </ul>
+        </section>
+
+        <section id="contact" class="card">
+          <h2><i class="fas fa-envelope"></i> Connect With Us</h2>
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <p>solidarity@freedompalestine.org</p>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-instagram"></i>
+              </div>
+              <p>@freedomforpalestine</p>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-twitter"></i>
+              </div>
+              <p>@palestinefree</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Gaza-specific Content -->
+    <div id="gaza-content" class="region-content">
+      <div class="card-grid">
+        <section class="card gaza-card">
+          <h2><i class="fas fa-info-circle"></i> Gaza Strip</h2>
+          <p>
+            The <span class="gaza-highlight">Gaza Strip</span> is a small coastal territory home to over 2 million Palestinians,
+            often described as the world's largest open-air prison due to the ongoing blockade imposed since 2007.
+          </p>
+          <p>
+            Despite immense challenges, the people of Gaza continue to demonstrate remarkable resilience
+            and strength in the face of adversity.
+          </p>
+        </section>
+
+        <section class="card gaza-card">
+          <h2><i class="fas fa-exclamation-triangle"></i> Current Situation in Gaza</h2>
+          <ul>
+            <li>16-year land, sea, and air blockade</li>
+            <li>One of the highest population densities in the world</li>
+            <li>Over 50% unemployment rate</li>
+            <li>Limited access to clean water and electricity</li>
+            <li>Regular military attacks causing significant casualties</li>
+          </ul>
+        </section>
+
+        <section class="card gaza-card">
+          <h2><i class="fas fa-hands-helping"></i> Support Gaza</h2>
+          <ul>
+            <li><i class="fas fa-medkit"></i> Donate to medical aid organizations</li>
+            <li><i class="fas fa-water"></i> Support clean water initiatives</li>
+            <li><i class="fas fa-graduation-cap"></i> Fund education programs for Gaza's youth</li>
+            <li><i class="fas fa-utensils"></i> Contribute to food security projects</li>
+            <li><i class="fas fa-archive"></i> Document and share stories from Gaza</li>
+          </ul>
+        </section>
+
+        <section class="card gaza-card">
+          <h2><i class="fas fa-quote-left"></i> Voices from Gaza</h2>
+          <blockquote>
+            "In Gaza, we wake up to another day of survival. But we never lose hope for freedom."
+          </blockquote>
+          <p>
+            Despite the difficult circumstances, Gaza remains a center of Palestinian culture,
+            resistance, and the unwavering hope for a better future.
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <!-- Al-Quds (Jerusalem) specific Content -->
+    <div id="quds-content" class="region-content">
+      <div class="card-grid">
+        <section class="card quds-card">
+          <h2><i class="fas fa-info-circle"></i> Al-Quds (Jerusalem)</h2>
+          <p>
+            <span class="quds-highlight">Al-Quds</span> (Jerusalem) is one of the oldest cities in the world and holds deep religious
+            and cultural significance for Muslims, Christians, and Jews alike.
+          </p>
+          <p>
+            For Palestinians, East Jerusalem is recognized as the capital of their future state,
+            but ongoing occupation and settlement expansion threaten the Palestinian presence in the city.
+          </p>
+        </section>
+
+        <section class="card quds-card">
+          <h2><i class="fas fa-exclamation-triangle"></i> Challenges in Al-Quds</h2>
+          <ul>
+            <li>Ongoing settlement expansion in East Jerusalem</li>
+            <li>Home demolitions and evictions of Palestinian families</li>
+            <li>Restrictions on movement and access to holy sites</li>
+            <li>Revocation of residency rights for Palestinians</li>
+            <li>Systematic attempt to alter the city's cultural character</li>
+          </ul>
+        </section>
+
+        <section class="card quds-card">
+          <h2><i class="fas fa-hands-helping"></i> Support Al-Quds</h2>
+          <ul>
+            <li><i class="fas fa-home"></i> Support organizations fighting home demolitions</li>
+            <li><i class="fas fa-scale-balanced"></i> Advocate for Palestinian residency rights in Jerusalem</li>
+            <li><i class="fas fa-map"></i> Raise awareness about illegal settlements</li>
+            <li><i class="fas fa-mosque"></i> Protect Islamic and Christian holy sites</li>
+            <li><i class="fas fa-book"></i> Document and preserve Palestinian heritage in Jerusalem</li>
+          </ul>
+        </section>
+
+        <section class="card quds-card">
+          <h2><i class="fas fa-quote-left"></i> Voices from Al-Quds</h2>
+          <blockquote>
+            "Jerusalem is the heart of Palestine. Without Jerusalem, there is no Palestine."
+          </blockquote>
+          <p>
+            Palestinians in Jerusalem continue to resist attempts to erase their presence
+            and maintain their cultural identity despite immense pressure.
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 Freedom for Palestine. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a, .hero-btn').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        window.scrollTo({
+          top: targetElement.offsetTop - 100,
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
+        header.style.background = 'var(--nav-bg)';
+      } else {
+        header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.3)';
+        header.style.background = 'var(--nav-bg)';
+      }
+    });
+
+    // Animation on scroll
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.style.opacity = 0;
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+
+    // Region tabs functionality
+    const regionTabs = document.querySelectorAll('.region-tab');
+    const regionContents = document.querySelectorAll('.region-content');
+
+    regionTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const region = tab.getAttribute('data-region');
+        
+        // Update active tab
+        regionTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        
+        // Show relevant content
+        regionContents.forEach(content => {
+          content.classList.remove('active');
+          if (content.id === `${region}-content`) {
+            content.classList.add('active');
+          }
+        });
+
+        // Scroll to top of content
+        window.scrollTo({
+          top: document.querySelector('main').offsetTop - 100,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
 </html>
